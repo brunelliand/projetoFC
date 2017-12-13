@@ -1,0 +1,7 @@
+com\brunelli\fluxoCaixa\api\AbstractCrudResource.class
+com\brunelli\fluxoCaixa\util\EntityNotFoundMapper.class
+com\brunelli\fluxoCaixa\api\ProdutoResource.class
+com\brunelli\fluxoCaixa\api\JaxRsActivator.class
+com\brunelli\fluxoCaixa\api\ClienteResource.class
+com\brunelli\fluxoCaixa\api\PedidoResource.class
+com\brunelli\fluxoCaixa\util\ConstraintViolationMapper.class
