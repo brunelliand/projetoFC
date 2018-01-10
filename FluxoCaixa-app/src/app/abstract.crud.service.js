@@ -18,6 +18,7 @@ export default class AbstractCrudService {
   }
 
   save(record) {
+    console.log(record);
     if (record.id) {
       return this._http.put(`${this._url}/${record.id}`, record)
     } else {

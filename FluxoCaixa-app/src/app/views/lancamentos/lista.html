@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Recibo</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Forma de pagamento</th>
+                <th scope="col">Bandeira</th>
+                <th scope="col">Valor</th>
+                <th width="10%" scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form action="lancamentoForm">
+            <tr ng-repeat="record in vm.records">
+                <td>
+                    <input type="text" name="recibo" class="form-control" ng-model="record.recibo" required />
+                </td>
+                <td>
+                    <input type="text" name="descricao" class="form-control" ng-model="record.descricao" />
+                </td>
+                <td>
+                    <input type="text" name="tipo" class="form-control" ng-model="record.tipo" />
+                </td>
+                <td>
+                    <input type="text" name="moeda" class="form-control" ng-model="record.moeda" />
+                </td>
+                <td>
+                    <input type="text" name="bandeira" class="form-control" ng-model="record.bandeira" />
+                </td>
+                <td>
+                    <input type="text" name="valor" class="form-control" ng-model="record.valor" />
+                </td>
+                <td class="text-center">
+                    <i class="fa fa-trash-o" aria-hidden="true" ng-if="!$first" ng-click="vm.removeLinha($index)" title="Delete" aria-hidden="true"></i>
+                    <i class="fa fa-pencil" aria-hidden="true" ng-if="!$first" ng-click="vm.removeLinha($index)" title="Delete" aria-hidden="true"></i>
+                    <i class="fa fa-plus-circle" ng-if="$last" ng-click="vm.add()" title="Add" aria-hidden="true"></i>
+                    <button ng-disabled="lancamentoForm.$invalid" ng-click="vm.save(record)" type="button" class="btn btn-primary btn-lg">Salvar Registro</button>
+                </td>
+            </tr>
+            </form>
+        </tbody>
+    </table>
+</div>

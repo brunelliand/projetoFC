@@ -1,37 +1,37 @@
 import ListController from './list.controller'
 import FormController from './form.controller'
 
-import ClienteServico from './servico'
+import LancamentoServico from './servico'
 
-export const clienteConfig = (modulo) => {
+export const lancamentoConfig = (modulo) => {
 
-  modulo.service('ClienteServico', ClienteServico)
+  modulo.service('LancamentoServico', LancamentoServico)
   
   return ['$stateProvider', '$urlRouterProvider', 
    ($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      .state('cliente', {
+      .state('lancamento', {
         template: require('@views/default.html'),
-        url: '/clientes',
+        url: '/lancamentos',
         onEnter: ['$state', function($state) {
-          $state.go('cliente.list')
+          $state.go('lancamento.list')
         }]
       })
-      .state('cliente.list', {
-        template: require('@views/clientes/list.html'),
-        url: '/list',
+      .state('lancamento.list', {
+        template: require('@views/lancamentos/lista.html'),
+        url: '/listar',
         controller: ListController,
         controllerAs: 'vm'
       })
-      .state('cliente.new', {
-        template: require('@views/clientes/form.html'),
+      .state('lancamento.new', {
+        template: require('@views/lancamentos/form.html'),
         url: '/novo',
         controller: FormController,
         controllerAs: 'vm'
       })
-      .state('cliente.edit', {
-        template: require('@views/clientes/form.html'),
-        url: '/{id}',
+      .state('lancamento.edit', {
+        template: require('@views/lancamentos/form.html'),
+        url: '/editar/{id}',
         controller: FormController,
         controllerAs: 'vm'
       });

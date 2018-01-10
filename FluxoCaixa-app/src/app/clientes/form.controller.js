@@ -1,9 +1,9 @@
 export default class FormController {
 
-    constructor($stateParams, $state, ClienteServico, Notification) {
+    constructor($stateParams, $state, LancamentoServico, Notification) {
         this.record = {}
         this.title = 'Adicionando registro'
-        this._service = ClienteServico
+        this._service = LancamentoServico
         if ($stateParams.id) {
             this.title = 'Editando registro'
             this._service.findById($stateParams.id)
@@ -18,12 +18,12 @@ export default class FormController {
     save() {
         this._service.save(this.record)
             .then(resp => {
-                this._notify.success('Cliente salvo com sucesso!')
-                this._state.go('cliente.list')
+                this._notify.success('Lancamento salvo com sucesso!')
+                this._state.go('lancamento.list')
             }).catch(function(){
-                this._notify.error('Erro ao salvar o cliente!')
+                this._notify.error('Erro ao salvar o lancamento!')
             })
     }
 }
 
-FormController.$inject = ['$stateParams', '$state', 'ClienteServico', 'Notification']
+FormController.$inject = ['$stateParams', '$state', 'LancamentoServico', 'Notification']

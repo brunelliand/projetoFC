@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <input ng-model="vm.filter" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+        </form>
+        <a class="btn btn-outline-info" ui-sref="lancamento.new">Novo registro</a>
+    </nav>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Recibo</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Forma de pagamento</th>
+                <th scope="col">Bandeira</th>
+                <th scope="col">Valor</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="rec in vm.records">
+                <th scope="row">{{rec.recibo}}</th>
+                <td>{{rec.descricao}}</td>
+                <td>{{rec.tipo}}</td>
+                <td>{{rec.moeda}}</td>
+                <td>{{rec.bandeira}}</td>
+                <td>{{rec.valor}}</td>
+                <td>
+                    <a class="btn btn-sm btn-success" ui-sref="lancamento.edit({id: rec.id})">Editar</a>
+                    <button ng-click="vm.excluir(rec.id)" class="btn btn-sm btn-danger" type="button">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
