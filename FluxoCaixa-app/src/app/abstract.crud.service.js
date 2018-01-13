@@ -33,7 +33,7 @@ export default class AbstractCrudService {
       type: 'warning',
       showConfirmButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Claro!',
+      confirmButtonText: 'Sim!',
       cancelButtonText: 'Não obrigado'
     }).then(resp => {
       return resp.value ? 

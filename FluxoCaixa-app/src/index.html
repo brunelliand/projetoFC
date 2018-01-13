@@ -4,20 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Minha App</title>
+    <title>Fluxo de Caixa</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" ui-sref="home">FluxoCaixa</a>
+      <a class="navbar-brand" ui-sref="home">Fluxo de Caixa</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Mostrar navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item" ui-sref-active="pedido" ui-sref="pedido">
+        <ul class="menu">
+          <li class="menu" class="nav-item">
+            <a class="nav-link">Cadastros</a>
+              <ul class="submenu-1">
+                <li class="nav-item" ui-sref="banco" ui-sref-active="active">
+                  <a class="nav-link" href="bancos/list">Bancos</a>
+                </li>
+                <li class="nav-item" ui-sref="cartao" ui-sref-active="active">
+                    <a class="nav-link" href="cartoes/list">Cartões</a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item" ui-sref-active="pedido" ui-sref="active">
             <a class="nav-link" href="pedidos/list">Pedidos</a>
           </li>
-          <li class="nav-item" ui-sref-active="produto" ui-sref="produto">
+          <li class="nav-item" ui-sref-active="banco" ui-sref="active">
+            <a class="nav-link" href="bancos/list">Bancos</a>
+          </li>
+          <li class="nav-item" ui-sref-active="produto" ui-sref="active">
             <a class="nav-link" href="produtos/list">Produtos</a>
           </li>
           <li class="nav-item" ui-sref="cliente" ui-sref-active="active">

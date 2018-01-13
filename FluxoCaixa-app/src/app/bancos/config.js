@@ -1,39 +1,39 @@
 import ListController from './list.controller'
 import FormController from './form.controller'
 
-import LancamentoServico from './servico'
+import BancoServico from './servico'
 
-export const lancamentoConfig = (modulo) => {
+export const bancoConfig = (modulo) => {
 
-  modulo.service('LancamentoServico', LancamentoServico)
+  modulo.service('BancoServico', BancoServico)
   
   return ['$stateProvider', '$urlRouterProvider', 
    ($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      .state('lancamento', {
+      .state('banco', {
         template: require('@views/default.html'),
-        url: '/lancamentos',
+        url: '/bancos',
         onEnter: ['$state', function($state) {
-          $state.go('lancamento.list')
+          $state.go('banco.list')
         }]
       })
-      .state('lancamento.list', {
-        template: require('@views/lancamentos/lista.html'),
+      .state('banco.list', {
+        template: require('@views/bancos/list.html'),
         url: '/listar',
         controller: ListController,
         controllerAs: 'vm'
       })
-      .state('lancamento.new', {
-        template: require('@views/lancamentos/form.html'),
+      .state('banco.new', {
+        template: require('@views/bancos/form.html'),
         url: '/novo',
         controller: FormController,
         controllerAs: 'vm'
       })
-      .state('lancamento.edit', {
-        template: require('@views/lancamentos/form.html'),
-        url: '/editar/{id}',
+      .state('banco.edit', {
+        template: require('@views/bancos/form.html'),
+        url: '/{id}',
         controller: FormController,
         controllerAs: 'vm'
       });
-    }]
+  }]
 }

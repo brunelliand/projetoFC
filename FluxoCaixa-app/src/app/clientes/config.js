@@ -19,7 +19,7 @@ export const clienteConfig = (modulo) => {
       })
       .state('cliente.list', {
         template: require('@views/clientes/list.html'),
-        url: '/list',
+        url: '/listar',
         controller: ListController,
         controllerAs: 'vm'
       })

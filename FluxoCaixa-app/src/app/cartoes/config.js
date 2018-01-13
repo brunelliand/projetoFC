@@ -1,39 +1,39 @@
 import ListController from './list.controller'
 import FormController from './form.controller'
 
-import LancamentoServico from './servico'
+import CartaoServico from './servico'
 
-export const lancamentoConfig = (modulo) => {
+export const cartaoConfig = (modulo) => {
 
-  modulo.service('LancamentoServico', LancamentoServico)
+  modulo.service('CartaoServico', CartaoServico)
   
   return ['$stateProvider', '$urlRouterProvider', 
    ($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      .state('lancamento', {
+      .state('cartao', {
         template: require('@views/default.html'),
-        url: '/lancamentos',
+        url: '/cartoes',
         onEnter: ['$state', function($state) {
-          $state.go('lancamento.list')
+          $state.go('cartao.list')
         }]
       })
-      .state('lancamento.list', {
-        template: require('@views/lancamentos/lista.html'),
+      .state('cartao.list', {
+        template: require('@views/cartoes/list.html'),
         url: '/listar',
         controller: ListController,
         controllerAs: 'vm'
       })
-      .state('lancamento.new', {
-        template: require('@views/lancamentos/form.html'),
+      .state('cartao.new', {
+        template: require('@views/cartoes/form.html'),
         url: '/novo',
         controller: FormController,
         controllerAs: 'vm'
       })
-      .state('lancamento.edit', {
-        template: require('@views/lancamentos/form.html'),
-        url: '/editar/{id}',
+      .state('cartao.edit', {
+        template: require('@views/cartoes/form.html'),
+        url: '/{id}',
         controller: FormController,
         controllerAs: 'vm'
       });
-    }]
+  }]
 }

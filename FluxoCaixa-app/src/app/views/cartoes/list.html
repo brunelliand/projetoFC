@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-group">
+            <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="Procurar..." />
+        </form>
+        <a class="btn btn-outline-info" ui-sref="cartao.new">Novo registro</a>
+    </nav>
+    <div>
+        <h2>{{vm.nome}}</h2>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('tipo')">Descrição</a>
+                </th>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('tipo')">Tipo</a>
+                </th>
+                <th>
+                    <a href="" ng-click="vm.ordenarPor('bandeira')">Bandeira</a>
+                </th>
+                <th>
+                    <a href="" ng-click="vm.ordenarPor('sistema')">Sistema</a>
+                </th>
+                <th>
+                    <a href="" ng-click="vm.ordenarPor('taxa')">Taxa</a>
+                </th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr dir-paginate="rec in vm.records|filter:criterioDeBusca|orderBy:vm.criterioDeOrdenacao:vm.direcaoDaOrdenacao|itemsPerPage:10">
+                <th scope="row">{{rec.descricao|uppercase}}</th>
+                <td>{{rec.tipo}}</td>
+                <td>{{rec.bandeira}}</td>
+                <td>{{rec.sistema}}</td>
+                <td>{{rec.taxa | percent : 2}}</td>
+                <td class="text-center">
+                    <i class="fa fa-pencil" ui-sref="cartao.edit({id: rec.id})" title="Editar"></i>
+                    <i class="fa fa-trash-o" ng-click="vm.excluir(rec.id)" title="Excluir"></i>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <dir-pagination-controls class="ng-binding" max-size="5" boundary-links="true"></dir-pagination-controls>
+</div>
