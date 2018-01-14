@@ -1,1 +1,1 @@
-export default class MainController {}
+export default class MainController {} 

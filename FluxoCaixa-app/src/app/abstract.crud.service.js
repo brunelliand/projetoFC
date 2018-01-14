@@ -12,7 +12,10 @@ export default class AbstractCrudService {
       .then(response => response.data)
   }
 
-  findById(id) {
+  findById(id, url) {
+    if(url){
+      this._url = url
+    }
     return this._http.get(`${this._url}/${id}`)
       .then(response => response.data)
   }

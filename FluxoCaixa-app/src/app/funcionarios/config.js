@@ -1,36 +1,36 @@
 import ListController from './list.controller'
 import FormController from './form.controller'
 
-import ClienteServico from './servico'
+import FuncionarioServico from './servico'
 
-export const clienteConfig = (modulo) => {
+export const funcionarioConfig = (modulo) => {
 
-  modulo.service('ClienteServico', ClienteServico)
+  modulo.service('FuncionarioServico', FuncionarioServico)
   
   return ['$stateProvider', '$urlRouterProvider', 
    ($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      .state('cliente', {
+      .state('funcionario', {
         template: require('@views/default.html'),
-        url: '/clientes',
+        url: '/funcionarios',
         onEnter: ['$state', function($state) {
-          $state.go('cliente.list')
+          $state.go('funcionario.list')
         }]
       })
-      .state('cliente.list', {
-        template: require('@views/clientes/list.html'),
+      .state('funcionario.list', {
+        template: require('@views/funcionarios/list.html'),
         url: '/listar',
         controller: ListController,
         controllerAs: 'vm'
       })
-      .state('cliente.new', {
-        template: require('@views/clientes/form.html'),
+      .state('funcionario.new', {
+        template: require('@views/funcionarios/form.html'),
         url: '/novo',
         controller: FormController,
         controllerAs: 'vm'
       })
-      .state('cliente.edit', {
-        template: require('@views/clientes/form.html'),
+      .state('funcionario.edit', {
+        template: require('@views/funcionarios/form.html'),
         url: '/{id}',
         controller: FormController,
         controllerAs: 'vm'

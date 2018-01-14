@@ -16,6 +16,7 @@
     "bootstrap": "^4.0.0-beta",
     "css-loader": "^0.28.7",
     "jquery": "^1.12.4",
+    "ng-filters-br": "^1.1.1",
     "popper.js": "^1.12.9",
     "sweetalert2": "^7.1.1"
   },

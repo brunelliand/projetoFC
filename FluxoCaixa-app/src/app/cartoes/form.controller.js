@@ -40,7 +40,10 @@ export default class FormController {
         this._notify.error("Erro ao salvar o " + this.nome + "!");
       });
   }
-}
+
+};
+
+
 
 FormController.$inject = [
   "$stateParams",

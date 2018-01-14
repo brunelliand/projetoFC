@@ -57,8 +57,7 @@ export default class ListController {
   }
 
   excluir(id) {
-    console.log("id" + id);
-    if (!id) {
+      if (!id) {
       console.log("se id é undefined ele entra aqui, não?");
       this.records.splice(this, 1);
     }

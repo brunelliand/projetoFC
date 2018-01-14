@@ -1,9 +1,9 @@
 export default class ListController {
 
-    constructor(ClienteServico, Notification) {
+    constructor(FuncionarioServico, Notification) {
         this.filter = ''
         this.records = []
-        this._service = ClienteServico
+        this._service = FuncionarioServico
         this._notify = Notification
         this.load()
     }
@@ -29,4 +29,4 @@ export default class ListController {
     }
 }
 
-ListController.$inject = ['ClienteServico', 'Notification']
+ListController.$inject = ['FuncionarioServico', 'Notification']
