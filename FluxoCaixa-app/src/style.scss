@@ -89,47 +89,47 @@ ul.menu {
 
 /*nivel 1*/
 .menu {
-  background: #212529;
+  background: #343a40;
 }
 .menu a {
   color: #fff;
 }
 .menu li:hover > a {
-  background: #999;
+  background: #444444;
   color: #fff;
 }
 
 /*nivel 2*/
 .submenu-1 {
-  background: #999;
+  background: #343a40;
 }
 .submenu-1 a {
   color: #fff;
 }
 .submenu-1 li:hover > a {
-  background: #666;
+  background: #444444;
 }
 
 /*nivel 3*/
 .submenu-2 {
-  background: #666;
+  background: #343a40;
 }
 .submenu-2 a {
   color: #fff;
 }
 .submenu-2 li:hover > a {
-  background: #333;
+  background: #343a40;
 }
 
 /*nivel 3*/
 .submenu-3 {
-  background: #333;
+  background: #343a40;
 }
 .submenu-3 a {
   color: #fff;
 }
 .submenu-3 li:hover > a {
-  background: #000;
+  background: #343a40;
 }
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {

@@ -1,27 +1,41 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-            <input ng-model="vm.filter" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
-        </form>
-        <a class="btn btn-outline-info" ui-sref="funcionario.new">Novo registro</a>
-    </nav>
+        <nav class="navbar navbar-light bg-light">
+                <form class="form-group">
+                    <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="Procurar..." />
+                </form>
+                <a class="btn btn-outline-info" ui-sref="funcionario.new">Novo registro</a>
+            </nav>
+    <div>
+        <h2>{{vm.nome}}</h2>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Documento</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telefone</th>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('codigo')">Código</a>
+                </th>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('nome')">Nome</a>
+                </th>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('cpf')">CPF</a>
+                </th>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('dataAdmissao')">Data da admissão</a>
+                </th>
+                <th scope="col">
+                    <a href="" ng-click="vm.ordenarPor('celular')">Celular</a>
+                </th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="rec in vm.records">
-                <th scope="row">{{rec.documento}}</th>
-                <td>{{rec.nome}}</td>
-                <td>{{rec.email}}</td>
-                <td>{{rec.telefone}}</td>
+            <tr dir-paginate="rec in vm.records|filter:criterioDeBusca|orderBy:vm.criterioDeOrdenacao:vm.direcaoDaOrdenacao|itemsPerPage:20">
+                <th>{{rec.codigo}}</th>
+                <th>{{rec.nome}}</th>
+                <td>{{rec.cpf|cpf}}</td>
+                <td>{{rec.dataAdmissao| date:"dd/MM/yyyy" }}</td>
+                <td>{{rec.celular_ddd+rec.celular|tel}}</td>
                 <td>
                     <a class="btn btn-sm btn-success" ui-sref="funcionario.edit({id: rec.id})">Editar</a>
                     <button ng-click="vm.excluir(rec.id)" class="btn btn-sm btn-danger" type="button">Excluir</button>

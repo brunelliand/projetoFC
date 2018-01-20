@@ -2,11 +2,18 @@ export default class ListController {
 
     constructor(FuncionarioServico, Notification) {
         this.filter = ''
+        this.nome = 'Funcionários'
         this.records = []
         this._service = FuncionarioServico
         this._notify = Notification
         this.load()
     }
+
+    ordenarPor(campo) {
+		this.criterioDeOrdenacao = campo;
+        this.direcaoDaOrdenacao = !this.direcaoDaOrdenacao;
+	};
+
 
     load() {
         this._service.findAll()

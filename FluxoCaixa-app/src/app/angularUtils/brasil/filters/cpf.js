@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('brasil.filters',[]).filter('cpf', function() {
   return function(input) {
   	var str = input+ '';

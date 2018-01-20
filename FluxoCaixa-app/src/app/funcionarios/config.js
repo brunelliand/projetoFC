@@ -17,7 +17,7 @@ export const funcionarioConfig = (modulo) => {
           $state.go('funcionario.list')
         }]
       })
-      .state('funcionario.list', {
+     .state('funcionario.list', {
         template: require('@views/funcionarios/list.html'),
         url: '/listar',
         controller: ListController,
